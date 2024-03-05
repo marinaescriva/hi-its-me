@@ -22,3 +22,8 @@ $ npm dotenv -E
     "type":"module"
 };
 ```
+
+``` bash
+npm i mongoose
+```
+
