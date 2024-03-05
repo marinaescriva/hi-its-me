@@ -1,4 +1,8 @@
-const express = require ('express');
+// const express = require ('express'); // vamos a trabajar con export e import  no con require
+
+//importanmos dependencias de librerias antes de los ficheros si los hay.
+import express from 'express'; //quitar los bigotes por defecto
+import 'dotenv/config';
 
 const app = express();
 
