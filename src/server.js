@@ -4,6 +4,8 @@
 import express from 'express'; //quitar los bigotes por defecto
 import 'dotenv/config';
 import { dbConnection } from './database/db.js';
+// import  authRoutes  from './routes/auth.routes.js'; // no lleva bigotes porque es default, puedes poner el nombre que quieras porque es el default.
+import router from './routes/router.js'; 
 
 const app = express();
 
@@ -11,6 +13,19 @@ const app = express();
 app.use(express.json())
 
 const PORT = process.env.PORT || 4001;
+
+//API routes
+app.get('/api/healthy', (req , res) =>{
+    res.status(200).json(
+        {
+            success: true,
+            message: "server is healthy"
+        }
+    )
+});
+
+app.use('/api', router);
+
 
 dbConnection()
 .then(()=>{
